@@ -13,13 +13,13 @@ following things we have to do
 
 
 ## Reprogram sonoff
-To setup your FTDI and sonoff to program mode, please see this blog, https://randomnerdtutorials.com/reprogram-sonoff-smart-switch-with-web-server/
+To setup your FTDI and sonoff to program mode, please see this blog, [Random Nerd Tutorials](https://randomnerdtutorials.com/reprogram-sonoff-smart-switch-with-web-server/).
 
 I have followed step by step process from above page and it works. Get the program sonoff-HA.ino and flash it. 
 
 ## Web UI
 
-Upon first boot, the sonoff starts up in AP mode with SSID RelayBoard and the Web-UI is accessible at http://relay.local/ OR http://192.168.4.1 from a computer or mobile phone connected to the RelayBoard Wi-Fi network. The home router SSID and password and other details can be entered and saved (persisted on the Wemos). Upon restarting, the Wemos should connect to the home router and get an IP address from there. Now the Web-UI should still be accessible at http://relay.local/ or at http://<whatever IP address the Wemos got from the router>/
+Upon first boot, the sonoff starts up in AP mode with SSID RelayBoard and the Web-UI is accessible at http://relay.local/ OR http://192.168.4.1 from a computer or mobile phone connected to the RelayBoard Wi-Fi network. The home router SSID and password and other details can be entered and saved (persisted on the Wemos). Upon restarting, the Wemos should connect to the home router and get an IP address from there. Now the Web-UI should still be accessible at http://sonoff-ip/
   
 ![Web](https://github.com/dipdawiz/sonoff-reprogram/raw/master/ui.jpg)
 
@@ -36,11 +36,11 @@ http://<IP_Address_of_Wemos>/getconfig will return a response with savedstate as
 
 ## Setup a Wemo emulator
 
-Setup your Raspberry PI and enable node-red (a library that helps you do your home automation https://nodered.org/docs/getting-started/). Once you are done with, this is the easiest part. Install wemo emulator by this command
+Setup your Raspberry PI and enable node-red (a library that helps you do your home automation [Node Red](https://nodered.org/docs/getting-started/). Once you are done with, this is the easiest part. Install wemo emulator by this command
 ```
 $ npm install node-red-contrib-wemo-emulator
 ```
-For more info how to configure this node, here is the repo for this node - https://github.com/biddster/node-red-contrib-wemo-emulator. With default configuration of your node-red on your PI, you can now access the node-red url from
+For more info how to configure this node, here is the repo for this node - [Wemo Emulator](https://github.com/biddster/node-red-contrib-wemo-emulator). With default configuration of your node-red on your PI, you can now access the node-red url from
 ```
 http://<raspberry-pi-ip>:1880
 ```
