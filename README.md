@@ -1,7 +1,7 @@
 # Sonoff Reprogram
-reprogram Sonoff Basic to run your own web server, so that you do not need 3rd party app to install on your mobile and not to add another Alexa skill.
+Reprogram Sonoff Basic to run your own web server, so that you do not need 3rd party app to install on your mobile and not to add another Alexa skill.
 
-**Please note. Make sure your sonoff is not connected to main power line while you open it. Also once overwritten, you cannot get original firmware to your sonoff and you no longer can use eWeLink app on your mobile to control this sonoff. Take extreme care on all the steps, so that you do not brick your sonoff.**
+**Please note. Make sure your Sonoff is not connected to main power line while you open it. Also once overwritten, you cannot get original firmware to your Sonoff and you no longer can use eWeLink app on your mobile to control this Sonoff. Take extreme care on all the steps, so that you do not brick your Sonoff.**
 
 We have to do following things
 
@@ -11,19 +11,20 @@ We have to do following things
 
 3. set up Alexa with devices
 
-4. connect the relay control with real electrical switches
+4. connect the Sonoff with real electrical device
 
 
 ## Reprogram sonoff
-To setup your FTDI and sonoff to program mode, please see this blog, [Random Nerd Tutorials](https://randomnerdtutorials.com/reprogram-sonoff-smart-switch-with-web-server/).
+Before you can reprogram you have to setup your FTDI and Sonoff to program mode. Please see this blog, [Random Nerd Tutorials](https://randomnerdtutorials.com/reprogram-sonoff-smart-switch-with-web-server/), it gives step by step process to reprogram your Sonoff. For simple operation, you can use the program given in the tutorial, else get the program "Sonoff-HA.ino" from this project and flash it. This project gives you option to save Sonoff state and set your SSID/Password to any custom one you want.
 
-I have followed step by step process from above page and it works. Get the program "Sonoff-HA.ino" from this project and flash it. 
+I have followed step by step process from above page and it works. 
 
 #### Web UI
 
 Upon first boot, the sonoff starts up in AP mode with SSID RelayBoard and the Web-UI is accessible at http://relay.local/ OR http://192.168.4.1 from a computer or mobile phone connected to the RelayBoard Wi-Fi network. The home router SSID and password and other details can be entered and saved (persisted on the Wemos). Upon restarting, the Wemos should connect to the home router and get an IP address from there. Now the Web-UI should still be accessible at http://<IP_Address_of_Sonoff>/
-  
+
 ![Web](https://github.com/dipdawiz/sonoff-reprogram/raw/master/ui.jpg)
+
 
 #### HTTP Control API
 
@@ -34,7 +35,6 @@ To turn OFF the switch, the URL is:
 http://<IP_Address_of_Sonoff>/off
 
 http://<IP_Address_of_Sonoff>/getconfig will return a response with savedstate as 0 or 1
-
 
 ## Setup a Wemo emulator
 
@@ -60,6 +60,6 @@ As soon as you deploy your node-red flow in previous step, you are ready to set 
 
 ## Connect Sonoff
 
-Now connect Sonoff to the device you want to control. Two way it can be connected, they are shown below
+In this step you will work with live electricity, so please be cautious. Connect Sonoff to the device you want to control. Two ways it can be connected, they are shown below
 
 ![sonoff-connection](https://github.com/dipdawiz/sonoff-reprogram/raw/master/sonoff-connection.png)
